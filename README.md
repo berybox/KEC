@@ -2,4 +2,4 @@
 Unique sequence search by K-mer exclusion
 
 ## Overview
-The original motivation for KEC was to find sufficiently unique DNA sequences within bacterial genomes for diagnostic PCR primer design, which requires the identification of unique sequences among many closely-related bacterial species. After preliminary testing, it was determined that KEC can quickly and efficiently process larger eukaryotic genomes as well. Moreover, the software can be useful for other genome, transcriptome or proteome related tasks.
+A manuscript describing the software is currently uder review in a scientific journal. Details will be provided after acceptance.
