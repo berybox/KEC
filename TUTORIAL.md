@@ -73,12 +73,19 @@ This tutorial provides only one of the many use cases of the KEC software, which
         kec.exe include -m master -p pool -o target\Xhg_k15.fna -k 15 --min 200
         ```
         Parameters explanation:
+
         **include** - Keep only K-mers that are present in any of the sequences from the pool
-        **-m master** – Points to the directory containing the master sequence(s). You can also specify the file directly (e.g. by `-m d:\Primer_design\master\GCF_001908775.1_ASM190877v1_genomic.fna`).
+
+        **-m master** – Points to the directory containing the master sequence(s). You can also specify the file directly (e.g. by `-m d:\Primer_design\master\GCF_001908775.1_ASM190877v1_genomic.fna`)
+
         **-p pool** – Similar to the above, pointing to the directory with the pool of sequences to be compared with master
+
         **-o target\Xhg_k15.fna** – file name with a path to store results
+
         **-k 15** – K-mer size to use for comparison. Explanation below
+
         **--min 200** – Minimum size of sequence to keep. We choose 200, because shorter sequences are generally not well suited for primer design
+        
 
         You should see following output:
     ![alt text](./assets/tutorial_fig11.png "KEC include output")
