@@ -49,3 +49,38 @@ This tutorial provides only one of the many use cases of the KEC software, which
 
     10. Repeat steps `3.i.` to `3.vi.` to obtain non-target assemblies and extract all FNA files to “D:\Primer_design\nontarget”. For this tutorial, we chose 41 assemblies from related xanthomonads and other related bacteria
     
+    ![alt text](./assets/tutorial_fig08.png "Non-target directory content")
+
+    11. At this point, we should have one file in `master` directory, four in `pool` and 41 in `nontarget`
+
+4. Use KEC to obtain sequences common to target genomes
+    1. Press `Windows key + R` to open Run window, type `cmd` and click OK
+
+    ![alt text](./assets/tutorial_fig09.png "Windows RUN window")
+
+    2. The Windows command line window will open
+
+    ![alt text](./assets/tutorial_fig10.png "Windows command line")
+
+    3. Write the following commands to navigate to the base directory:
+        ```
+        D:
+        cd \Primer_design
+        ```
+    4. Here you can get program usage information by writing `kec.exe`, `kec.exe include` or `kec.exe exclude`
+    5. Type the following command to obtain sequences that are present in all target assemblies:
+        ```
+        kec.exe include -m master -p pool -o target\Xhg_k15.fna -k 15 --min 200
+        ```
+        Parameters explanation:
+        **include** - Keep only K-mers that are present in any of the sequences from the pool
+        **-m master** – Points to the directory containing the master sequence(s). You can also specify the file directly (e.g. by `-m d:\Primer_design\master\GCF_001908775.1_ASM190877v1_genomic.fna`).
+        **-p pool** – Similar to the above, pointing to the directory with the pool of sequences to be compared with master
+        **-o target\Xhg_k15.fna** – file name with a path to store results
+        **-k 15** – K-mer size to use for comparison. Explanation below
+        **--min 200** – Minimum size of sequence to keep. We choose 200, because shorter sequences are generally not well suited for primer design
+
+        You should see following output:
+    ![alt text](./assets/tutorial_fig11.png "KEC include output")
+
+
