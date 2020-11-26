@@ -16,3 +16,10 @@ This tutorial provides only one of the many use cases of the KEC software, which
 2. Download KEC from <https://github.com/berybox/KEC/releases>. The program is a standalone executable and does not require installation. It can be placed in any directory on the computer. For simplicity, in this tutorial, the program will be placed in our base directory `D:\Primer_design`. The directory structure should now look similar to this:
 
 ![alt text](./tutorial/fig1.png "náhradní obrázek")
+
+> NOTE: During the download or after the first launch of the program, you can get antivirus warnings stating that the program may be harmful. However, if downloaded from the mentioned official website, the program only works as stated, without any malicious activity or data collection. Users may inspect and compile from source code, available at <https://github.com/berybox/KEC>, if security is a concern.
+
+3. Download genomic data from the NCBI (or any other) database. KEC currently only reads FASTA formatted files.
+    * In your web browser, go to <https://www.ncbi.nlm.nih.gov>
+    * Put *Xanthomonas hortorum* pv. *gardneri* to the search box and click `Search`
+    
