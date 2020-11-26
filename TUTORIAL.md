@@ -34,16 +34,18 @@ This tutorial provides only one of the many use cases of the KEC software, which
     
     ![alt text](./assets/tutorial_fig04.png "NCBI database search")
     
-    6. A zip file of the dataset will be downloaded to your computer
-    7. Clicking the downloaded zip file should open it in File Explorer. Then navigate to `ncbi_dataset` and `data`. You should see five directories, each containing a `FASTA` (`.fna` extension in this case) file with one of the assemblies 
+    6. A `.ZIP` file of the dataset will be downloaded to your computer
+    7. Clicking the downloaded zip file should open it in File Explorer. Then navigate to `ncbi_dataset` and `data`. You should see five directories, each containing a `FASTA` (`.FNA` extension in this case) file with one of the assemblies 
     
     ![alt text](./assets/tutorial_fig05.png "Downloaded assemblies")
     
-    8. Navigate to the directory with a file that will be used as a master sequence (in this case `GCF_001908775.1` and copy the `FNA` file to the directory `master` in the base directory (i.e. `D:\Primer_design\master`) 
+    8. Navigate to the directory with a file that will be used as a master sequence (in this case `GCF_001908775.1` and copy the `.FNA` file to the directory `master` in the base directory (i.e. `D:\Primer_design\master`) 
     
     ![alt text](./assets/tutorial_fig06.png "Copy assembly")
     
-    9. Copy the other four assemblies to the `D:\Primer_design\pool` in the same way, so the directory `pool` will contain four `FNA` files 
+    9. Copy the other four assemblies to the `D:\Primer_design\pool` in the same way, so the directory `pool` will contain four `.FNA` files 
     
     ![alt text](./assets/tutorial_fig07.png "Pool directory content")
+
+    10. Repeat steps `3.i.` to `3.vi.` to obtain non-target assemblies and extract all FNA files to “D:\Primer_design\nontarget”. For this tutorial, we chose 41 assemblies from related xanthomonads and other related bacteria
     
