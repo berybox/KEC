@@ -15,11 +15,18 @@ This tutorial provides only one of the many use cases of the KEC software, which
 
 2. Download KEC from <https://github.com/berybox/KEC/releases>. The program is a standalone executable and does not require installation. It can be placed in any directory on the computer. For simplicity, in this tutorial, the program will be placed in our base directory `D:\Primer_design`. The directory structure should now look similar to this:
 
-![alt text](./tutorial/fig1.png "náhradní obrázek")
+![alt text](./assets/tutorial_fig01.png "Suggested directory structure")
 
 > NOTE: During the download or after the first launch of the program, you can get antivirus warnings stating that the program may be harmful. However, if downloaded from the mentioned official website, the program only works as stated, without any malicious activity or data collection. Users may inspect and compile from source code, available at <https://github.com/berybox/KEC>, if security is a concern.
 
 3. Download genomic data from the NCBI (or any other) database. KEC currently only reads FASTA formatted files.
     * In your web browser, go to <https://www.ncbi.nlm.nih.gov>
-    * Put *Xanthomonas hortorum* pv. *gardneri* to the search box and click `Search`
+    * Put *Xanthomonas hortorum* pv. *gardneri* to the search box and click `Search` ![alt text](./assets/tutorial_fig02.png "NCBI database search")
+    * On the next page click `Assembly` ![alt text](./assets/tutorial_fig03.png "NCBI database search")
+    * Click the checkboxes of all assemblies you want to use as a target for your primer design (1). In this tutorial, we will use assembly numbers 1 to 5. Then click `Download Datasets` (2) on the right
+    * In the popup window, make sure that only `Genomic Sequence (FASTA)` checkbox is checked (3) and click `Download` (4) ![alt text](./assets/tutorial_fig04.png "NCBI database search")
+    * A zip file of the dataset will be downloaded to your computer
+    * Clicking the downloaded zip file should open it in File Explorer. Then navigate to `ncbi_dataset` and `data`. You should see five directories, each containing a FASTA (.fna extension in this case) file with one of the assemblies ![alt text](./assets/tutorial_fig05.png "Downloaded assemblies")
+    * Navigate to the directory with a file that will be used as a master sequence (in this case `GCF_001908775.1` and copy the `FNA` file to the directory `master` in the base directory (i.e. `D:\Primer_design\master`) ![alt text](./assets/tutorial_fig06.png "Copy assembly")
+    * Copy the other four assemblies to the `D:\Primer_design\pool` in the same way, so the directory `pool` will contain four `FNA` files ![alt text](./assets/tutorial_fig07.png "Pool directory content")
     
