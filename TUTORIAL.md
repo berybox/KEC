@@ -97,12 +97,19 @@ This tutorial provides only one of the many use cases of the KEC software, which
     kec.exe exclude -t target\Xhg_k10.fna -n nontarget -o results\Xhg_unique_k13.fna -k 13 --min 200 -r
     ```
     Parameters explanation:
+
     **exclude** – Keep only K-mers that are NOT present in any of the sequences from nontarget
+    
     **-t target\Xhg_k10.fna** – Points to the file containing target sequences from step 4
+    
     **-n nontarget** – Points to the directory with nontarget sequences to be compared with target
+    
     **-o results\Xhg_unique_k13.fna** – file name with a path to store results
+    
     **-k 13** – K-mer size to use for comparison. Explanation below
+    
     **--min 200** – minimum size of the sequence to keep. We choose 200, because shorter sequences are generally not well suited for primer design
+    
     **-r** – compare also reverse complements of the sequences. This option takes approximately 2 – 3x more time
     You should see the following output:
     
