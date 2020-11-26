@@ -85,9 +85,46 @@ This tutorial provides only one of the many use cases of the KEC software, which
         **-k 15** – K-mer size to use for comparison. Explanation below
 
         **--min 200** – Minimum size of sequence to keep. We choose 200, because shorter sequences are generally not well suited for primer design
-        
+
 
         You should see following output:
     ![alt text](./assets/tutorial_fig11.png "KEC include output")
 
+    6. A new file named `Xhg_k15.fna` was created by KEC in `D:\Primer_design\target`. You can repeat step `4.v.` multiple times to obtain different results. In general, considerations for selecting K-mer size are as follows:Lower K-mer size usually results in fewer sequences which usually tend to be longer, and conversely, higher K-mer size usually results in higher number but shorter sequences. Furthermore, be aware that lower K-mer size means higher chance the sequence is merged with K-mers that are present in the pool sequences, but from various positions. We usually select K-mer size by starting at a number around 15 and raise the number until the resulting sequence count no longer increases by much
 
+5. Use KEC to obtain sequences unique to target genomes. Write the following command to obtain sequences that are assumed to be unique for target genomes:
+    ```
+    kec.exe exclude -t target\Xhg_k10.fna -n nontarget -o results\Xhg_unique_k13.fna -k 13 --min 200 -r
+    ```
+    Parameters explanation:
+    **exclude** – Keep only K-mers that are NOT present in any of the sequences from nontarget
+    **-t target\Xhg_k10.fna** – Points to the file containing target sequences from step 4
+    **-n nontarget** – Points to the directory with nontarget sequences to be compared with target
+    **-o results\Xhg_unique_k13.fna** – file name with a path to store results
+    **-k 13** – K-mer size to use for comparison. Explanation below
+    **--min 200** – minimum size of the sequence to keep. We choose 200, because shorter sequences are generally not well suited for primer design
+    **-r** – compare also reverse complements of the sequences. This option takes approximately 2 – 3x more time
+    You should see the following output:
+    
+    ![alt text](./assets/tutorial_fig12.png "KEC exclude output")
+
+    A new file named `Xhg_unique_k13.fna` was created by KEC in `D:\Primer_design\results`. You can repeat step 5 multiple times to obtain different results. For K-mer exclusion, the principle of choosing K-mer size is different from inclusion. With higher K-mer size, number and size of the resulting sequences increase. Because a lower K-mer size means that at least 1 $\div$ [K-mer size] nucleotide is different from nontarget sequences, we usually (for primer design) want to find the lowest K-mer size that produces any results. We usually do that by starting at a number around 12 and increase or decrease the number until the lowest number producing more than 0 sequences is found
+
+6. Check the results by BLAST (NCBI)
+    1. The file `d:\Primer_design\results\Xhg_unique_k13.fna` contains 33 sequences that are assumed to be unique for *Xanthomonas hortorum* pv. *gardneri*
+    2. Open web browser and navigate to the nucleotide BLAST website: <https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch>
+    3. Click on the `Choose File` button and find the `Xhg_unique_k13.fna` in your computer
+    4. Click on `BLAST` button
+
+    ![alt text](./assets/tutorial_fig13.png "NCBI BLAST")
+
+    5. Wait for the results. The search can take from several seconds to several minutes
+    6. After the search is complete, you should see a page similar to this:
+
+    ![alt text](./assets/tutorial_fig14.png "NCBI BLAST result")
+
+    7. Here you can review all of the 33 sequences, whether they seem to be unique for the target
+    8. You can repeat step 6 with any other database within NCBI or elsewhere
+    9. If a recurring nontarget organism is present in the results, its sequence can be easily downloaded to `nontarget` directory and steps 5 and 6 can be repeated until desirable results are produced
+
+7. After a thorough review of the sequences, you can use them for primer design with any favorite tool like PrimerExplorer, Primer3, Primer-BLAST, etc. Detailed primer design is outside the scope of this tutorial
