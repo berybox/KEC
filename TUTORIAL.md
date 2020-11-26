@@ -47,7 +47,7 @@ This tutorial provides only one of the many use cases of the KEC software, which
     
     ![alt text](./assets/tutorial_fig07.png "Pool directory content")
 
-    10. Repeat steps `3.i.` to `3.vi.` to obtain non-target assemblies and extract all FNA files to “D:\Primer_design\nontarget”. For this tutorial, we chose 41 assemblies from related xanthomonads and other related bacteria
+    10. Repeat steps `3.i.` to `3.vi.` to obtain non-target assemblies and extract all `.FNA` files to `D:\Primer_design\nontarget`. For this tutorial, we chose 41 assemblies from related xanthomonads and other related bacteria
     
     ![alt text](./assets/tutorial_fig08.png "Non-target directory content")
 
@@ -84,11 +84,10 @@ This tutorial provides only one of the many use cases of the KEC software, which
 
         **-k 15** – K-mer size to use for comparison. Explanation below
 
-        **--min 200** – Minimum size of sequence to keep. We choose 200, because shorter sequences are generally not well suited for primer design
-
-
+        **--min 200** – Minimum size of sequence to keep. We choose 200, because shorter sequences are generally not well suited for primer design\
         You should see following output:
-    ![alt text](./assets/tutorial_fig11.png "KEC include output")
+        
+        ![alt text](./assets/tutorial_fig11.png "KEC include output")
 
     6. A new file named `Xhg_k15.fna` was created by KEC in `D:\Primer_design\target`. You can repeat step `4.v.` multiple times to obtain different results. In general, considerations for selecting K-mer size are as follows:Lower K-mer size usually results in fewer sequences which usually tend to be longer, and conversely, higher K-mer size usually results in higher number but shorter sequences. Furthermore, be aware that lower K-mer size means higher chance the sequence is merged with K-mers that are present in the pool sequences, but from various positions. We usually select K-mer size by starting at a number around 15 and raise the number until the resulting sequence count no longer increases by much
 
@@ -110,7 +109,7 @@ This tutorial provides only one of the many use cases of the KEC software, which
     
     **--min 200** – minimum size of the sequence to keep. We choose 200, because shorter sequences are generally not well suited for primer design
     
-    **-r** – compare also reverse complements of the sequences. This option takes approximately 2 – 3x more time
+    **-r** – compare also reverse complements of the sequences. This option takes approximately 2 – 3x more time\
     You should see the following output:
     
     ![alt text](./assets/tutorial_fig12.png "KEC exclude output")
