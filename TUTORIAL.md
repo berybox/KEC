@@ -76,7 +76,7 @@ This tutorial provides only one of the many use cases of the KEC software, which
 
         **include** - Keep only K-mers that are present in any of the sequences from the pool
 
-        **-m master** – Points to the directory containing the master sequence(s). You can also specify the file directly (e.g. by `-m d:\Primer_design\master\GCF_001908775.1_ASM190877v1_genomic.fna`)
+        **-m master** – Points to the directory containing the master sequence(s). You can also specify the file directly (e.g. by `-m D:\Primer_design\master\GCF_001908775.1_ASM190877v1_genomic.fna`)
 
         **-p pool** – Similar to the above, pointing to the directory with the pool of sequences to be compared with master
 
@@ -85,6 +85,7 @@ This tutorial provides only one of the many use cases of the KEC software, which
         **-k 15** – K-mer size to use for comparison. Explanation below
 
         **--min 200** – Minimum size of sequence to keep. We choose 200, because shorter sequences are generally not well suited for primer design\
+        
         You should see following output:
         
         ![alt text](./assets/tutorial_fig11.png "KEC include output")
@@ -117,7 +118,7 @@ This tutorial provides only one of the many use cases of the KEC software, which
     A new file named `Xhg_unique_k13.fna` was created by KEC in `D:\Primer_design\results`. You can repeat step 5 multiple times to obtain different results. For K-mer exclusion, the principle of choosing K-mer size is different from inclusion. With higher K-mer size, number and size of the resulting sequences increase. Because a lower K-mer size means that at least 1 ![formula](https://render.githubusercontent.com/render/math?math=\div) [K-mer size] nucleotide is different from nontarget sequences, we usually (for primer design) want to find the lowest K-mer size that produces any results. We usually do that by starting at a number around 12 and increase or decrease the number until the lowest number producing more than 0 sequences is found
 
 6. Check the results by BLAST (NCBI)
-    1. The file `d:\Primer_design\results\Xhg_unique_k13.fna` contains 33 sequences that are assumed to be unique for *Xanthomonas hortorum* pv. *gardneri*
+    1. The file `D:\Primer_design\results\Xhg_unique_k13.fna` contains 33 sequences that are assumed to be unique for *Xanthomonas hortorum* pv. *gardneri*
     2. Open web browser and navigate to the nucleotide BLAST website: <https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch>
     3. Click on the `Choose File` button and find the `Xhg_unique_k13.fna` in your computer
     4. Click on `BLAST` button
