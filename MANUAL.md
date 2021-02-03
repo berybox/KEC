@@ -1,6 +1,7 @@
 # KEC Manual
 
 ## Introduction
+KEC *(short for K-mer exclusion by crossreference)* was designed to search for unique DNA / RNA / amino acid sequences in large datasets. Tho original aim was to find unique sites to design (PCR / LAMP etc.) primers for specific detection of bacteria. It takes target and non-target genomes and by crossreferencing of the respective K-mers it reconstructs sequences that are unique for target genome(s).
 
 ## Principle of operation
 
