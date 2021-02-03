@@ -24,3 +24,6 @@ KEC currently works only with fasta formated files on both input and output. To 
 ## Memory tests
 
 ## Speed tests
+
+## Citation
+Under review
