@@ -9,6 +9,11 @@ KEC *(short for K-mer exclusion by crossreference)* was designed to search for u
 KEC does not require installation. Binary executables for Windows, Linux and macOS can be downloaded from Releases section. After download and extraction the software works in any directory. During download and first run the software can be marked by antivirus as harmul. However, if downloaded from this repository, the program only works as stated, without any malicious activity or data collection. Users may inspect and compile from source code, if security is a concern.
 
 ## Command-line parameters
+KEC has two modes of operation - **exclude** and **include**. Each mode has its own set of parameters accessible by `-h` or `--help` parameter (e.g. `kec.exe exclude -h`).
+
+### exclude mode
+
+### include mode
 
 ## K selection
 
