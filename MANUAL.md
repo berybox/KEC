@@ -21,12 +21,13 @@ KEC *(short for K-mer exclusion by crossreference)* was designed to search for u
 ## Principle of operation
 In general, KEC is designed to use **target** and **non-target** genomes to find unique sequences in **target**. The principle of KEC algorithm can be devided into 3 main stages: **K-mer creation**, **crossreferencing of the K-mers** and **merging surviving K-mers into longer sequences**.
 
-In the first stage all input sequences (both target and non-target) are used to create K-mers by sliding windows approach.
+In the first stage all input sequences (both target and non-target) are used to create K-mers by sliding windows approach. 
 
 <img src="./assets/manual_fig01.png" width="350" height="auto">
 
 >K-mer size is a mandatory parameter and its selection is discussed in a  [separate section](#k-mer-size-selection).
 
+The K-mers are stored in two seaprate [hash tables](https://en.wikipedia.org/wiki/Hash_table) (map structure in Go) for target and non-target respectively. The main advantage of hash table is its time complexity for search and insertion which is constant on average and linear in worst case scenario (O(1) to O(n)). This allows KEC to operate very fast even with big datasets (with more data the time needed to complete the search only grows linearly in worst case).
 
 
 
