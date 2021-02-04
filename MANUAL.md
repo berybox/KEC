@@ -13,13 +13,13 @@ KEC does not require installation. Binary executables for Windows, Linux and mac
 KEC has two modes of operation - **exclude** and **include**. Each mode has its own set of parameters accessible by `-h` or `--help` parameter (e.g. `kec.exe exclude -h`).
 
 ### exclude mode
-- `-t` - Add target sequence(s) from PATH as `.fasta` file or whole directory.
-- `-n` - Add nontarget sequence(s) from PATH as `.fasta` file or whole directory.
+- `-t` - Add target sequence(s). `.fasta` file or whole directory is allowed.
+- `-n` - Add nontarget sequence(s). `.fasta` file or whole directory is allowed.
 - `-o` - Output path to store resulting `.fasta` file.
-- `-k` - K-mer size (default: 12). Explained in separate chapter.
-- `-r` - Also exclude reverse complements of the sequences (default: false).
-- `--min` - Minimum size of resulting sequence (default: 13).
-- `--max` - Maximum size of resulting sequence (0 = unlimited) (default: 0).
+- `-k` - K-mer size. Explained in separate chapter. *Default = 12*.
+- `-r` - Also exclude reverse complements of the sequences. Takes more time to finish. *Default = false*.
+- `--min` - Minimum size of resulting sequence. *Default = 13*.
+- `--max` - Maximum size of resulting sequence (0 = unlimited). *Default = 0*.
 - `--help`, `-h` - Show help text.
 
 ### include mode
