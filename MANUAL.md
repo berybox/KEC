@@ -23,7 +23,7 @@ In general, KEC is designed to use **target** and **non-target** genomes to find
 
 In the first stage all input sequences (both target and non-target) are used to create K-mers by sliding windows approach.
 
-<img src="./assets/manual_fig01.png" width="400" height="auto">
+<img src="./assets/manual_fig01.png" width="350" height="auto">
 
 >K-mer size is a mandatory parameter and its selection is discussed in a  [separate section](#k-mer-size-selection).
 
