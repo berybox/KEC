@@ -16,10 +16,19 @@
 ## Introduction
 KEC *(short for K-mer exclusion by crossreference)* was designed to search for unique DNA / RNA / amino acid sequences in large datasets. The original aim was to find unique sites to design (PCR / LAMP etc.) primers for specific detection of bacteria. It takes **target** and **non-target** genomes and by crossreferencing of the respective K-mers it reconstructs sequences that are unique for **target** genome(s).
 
+!!!NOT FOR UNASSEMBLED READS <<---
+
 ## Principle of operation
+In general, KEC is designed to use **target** and **non-target** genomes to find unique sequences in **target**. The principle of KEC algorithm can be devided into 3 main stages: **K-mer creation**, **crossreferencing of the K-mers** and **merging surviving K-mers into longer sequences**.
+
+In the first stage all input sequences (both target and non-target) are used to create K-mers by sliding windows approach. K-mer size is a mandatory parameter and its selection is discussed in a separate section [K-mer size selection](#k-mer-size-selection).
+
+![alt text](./assets/manual_fig01.png "K-mer creation")
+
+
 
 ## Installation
-KEC does not require installation. Binary executables for Windows, Linux and macOS can be downloaded from Releases section. After download and extraction the software works in any directory. During download and first run the software can be marked by antivirus as harmul. However, if downloaded from this repository, the program only works as stated, without any malicious activity or data collection. Users may inspect and compile from source code, if security is a concern.
+KEC does not require installation. Binary executables for **Windows**, **Linux** and **macOS** can be downloaded from Releases section. After download and extraction the software works in any directory. During download and first run the software can be marked by antivirus as harmul. However, if downloaded from this repository, the program only works as stated, without any malicious activity or data collection. Users may inspect and compile from source code, if security is a concern.
 
 ## Command-line parameters
 KEC has two modes of operation - **exclude** and **include**. Each mode has its own set of parameters accessible by `-h` or `--help` parameter (e.g. `kec.exe exclude -h`).
