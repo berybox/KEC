@@ -21,9 +21,13 @@ KEC *(short for K-mer exclusion by crossreference)* was designed to search for u
 ## Principle of operation
 In general, KEC is designed to use **target** and **non-target** genomes to find unique sequences in **target**. The principle of KEC algorithm can be devided into 3 main stages: **K-mer creation**, **crossreferencing of the K-mers** and **merging surviving K-mers into longer sequences**.
 
-In the first stage all input sequences (both target and non-target) are used to create K-mers by sliding windows approach. K-mer size is a mandatory parameter and its selection is discussed in a separate section [K-mer size selection](#k-mer-size-selection).
+In the first stage all input sequences (both target and non-target) are used to create K-mers by sliding windows approach.
 
-<img src="./assets/manual_fig01.png" width="300">
+<img src="./assets/manual_fig01.png" width="400" height="auto">
+
+>K-mer size is a mandatory parameter and its selection is discussed in a  [separate section](#k-mer-size-selection).
+
+
 
 
 
