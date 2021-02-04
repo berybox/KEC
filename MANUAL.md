@@ -1,8 +1,8 @@
 
 # KEC Manual
 
-[Introduction](#introduction)
-[Principle of operation](#principle-of-operation)
+[Introduction](#introduction)  
+[Principle of operation](#principle-of-operation)  
 [Installation](#installation)
 [Command-line parameters](#command-line-parameters)
 [K-mer size selection](#k-mer-size-selection)
