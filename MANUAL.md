@@ -3,14 +3,14 @@
 
 [Introduction](#introduction)  
 [Principle of operation](#principle-of-operation)  
-[Installation](#installation)
-[Command-line parameters](#command-line-parameters)
-[K-mer size selection](#k-mer-size-selection)
-[Input and output data](#input-and-output-data)
-[Memory tests](#memory-tests)
-[Speed tests](#speed-tests)
+[Installation](#installation)  
+[Command-line parameters](#command-line-parameters)  
+[K-mer size selection](#k-mer-size-selection)  
+[Input and output data](#input-and-output-data)  
+[Memory tests](#memory-tests)  
+[Speed tests](#speed-tests)  
 <!--
-[Citation](#citation)
+[Citation](#citation)  
 -->
 
 ## Introduction
