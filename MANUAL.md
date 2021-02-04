@@ -13,16 +13,35 @@ KEC does not require installation. Binary executables for Windows, Linux and mac
 KEC has two modes of operation - **exclude** and **include**. Each mode has its own set of parameters accessible by `-h` or `--help` parameter (e.g. `kec.exe exclude -h`).
 
 ### exclude mode
-- `-t` - Add target sequence(s). `.fasta` file or whole directory is allowed.
-- `-n` - Add nontarget sequence(s). `.fasta` file or whole directory is allowed.
-- `-o` - Output path to store resulting `.fasta` file.
+- `-t` - Add target sequence(s). Fasta formatted file or whole directory is allowed.
+- `-n` - Add nontarget sequence(s). Fasta formatted file or whole directory is allowed.
+- `-o` - Output path to store resulting fasta formatted file.
 - `-k` - K-mer size. Explained in separate chapter. *Default = 12*.
-- `-r` - Also exclude reverse complements of the sequences. Takes more time to finish. *Default = false*.
+- `-r` - Also exclude reverse complements of the sequences. Takes more (approx. 2 - 3x) time to finish. *Default = false*.
 - `--min` - Minimum size of resulting sequence. *Default = 13*.
 - `--max` - Maximum size of resulting sequence (0 = unlimited). *Default = 0*.
-- `--help`, `-h` - Show help text.
+- `--help`, `-h` - Show help message.
+
+Example:
+
+`kec.exe exclude -t c:\seqs\target -n c:\seqs\nontarget -o c:\seqs\results\test.fasta -k 12 --min 200`
+
+Will search for unique sequences in fasta formatted files located in `c:\seqs\target` by comparing them to non-target sequences in `c:\seqs\nontarget`. K-mer size will be 12 and minimal length of recovered sequences will be 200.
 
 ### include mode
+- `-m` - Add master sequence(s). Fasta formatted file or whole directory is allowed.
+- `-p` - Add pool sequence(s) to include in consensus sequence. Fasta formatted file or whole directory is allowed.
+- `-o` - Output path to store resulting fasta formatted file.
+- `-k` - K-mer size. Explained in separate chapter. *Default = 12*.
+- `--min` - Minimum size of resulting sequence. *Default = 13*.
+- `--max` - Maximum size of resulting sequence (0 = unlimited). *Default = 0*.
+- `--help`, `-h` - Show help message.
+
+Example:
+
+`kec.exe include -m c:\seqs\master\master.fasta -n c:\seqs\nontarget -o c:\seqs\results\test.fasta -k 12 --min 200`
+
+Will search for common sequences in fasta formatted file `c:\seqs\master\master.fasta` by comparing them to pool sequences located in directory `c:\seqs\pool`. K-mer size will be 12 and minimal length of recovered sequences will be 200.
 
 ## K selection
 
