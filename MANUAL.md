@@ -22,7 +22,7 @@ KEC has two modes of operation - **exclude** and **include**. Each mode has its 
 - `--max` - Maximum size of resulting sequence (0 = unlimited). *Default = 0*.
 - `--help`, `-h` - Show help message.
 
-Example:
+**Example:**
 
 `kec.exe exclude -t c:\seqs\target -n c:\seqs\nontarget -o c:\seqs\results\test.fasta -k 12 --min 200`
 
@@ -37,7 +37,7 @@ Will search for unique sequences in fasta formatted files located in `c:\seqs\ta
 - `--max` - Maximum size of resulting sequence (0 = unlimited). *Default = 0*.
 - `--help`, `-h` - Show help message.
 
-Example:
+**Example:**
 
 `kec.exe include -m c:\seqs\master\master.fasta -n c:\seqs\nontarget -o c:\seqs\results\test.fasta -k 12 --min 200`
 
