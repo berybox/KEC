@@ -31,12 +31,13 @@ The K-mers obtained from target and non-target sequences are stored in two desig
 
 The main advantage of hash table is its low time complexity for search and insertion which is constant on average and linear in worst case scenario (O(1) to O(n)). This allows KEC to operate very fast even with big datasets (with more data the time needed to complete the search only grows linearly in worst case).
 
-In the next stage all K-mers from target hash table are crossreferenced with non-target hash table. When target K-mer is present in non-target hash table, it is excluded. In the end, the target hash table is only contains K-mers which are not present in non-target hash table together with its original position.
+In the next stage all K-mers from target hash table are crossreferenced with non-target hash table. When target K-mer is present in non-target hash table, it is excluded. In the end, the target hash table only contains K-mers together with its original position which are not present in non-target hash table.
 
 <img src="./assets/manual_fig02.svg" width="350" height="auto">
 
+In last stage the surviving target K-mers are put back to the position it was originally taken. If the K-mers overlap, they create larger sequences. When all K-mers are back in its original position all gaps are removed, resulting in sequences of various lengths.
 
-
+<img src="./assets/manual_fig03.svg" width="350" height="auto">
 
 ## Installation
 KEC does not require installation. Binary executables for **Windows**, **Linux** and **macOS** can be downloaded from Releases section. After download and extraction the software works in any directory. During download and first run the software can be marked by antivirus as harmul. However, if downloaded from this repository, the program only works as stated, without any malicious activity or data collection. Users may inspect and compile from source code, if security is a concern.
