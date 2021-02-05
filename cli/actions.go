@@ -43,6 +43,7 @@ func exclude(c *cli.Context) error {
 
 		//Show memory stats
 		//*
+		//runtime.GC()
 		runtime.ReadMemStats(&actionMem)
 		showMsg("-- HeapAlloc: %d MB,  Mallocs: %d\n", actionMem.HeapAlloc/1024/1024, actionMem.Mallocs)
 		//

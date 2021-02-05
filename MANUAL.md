@@ -92,7 +92,7 @@ Lower K-mer size usually results in fewer sequences which usually tend to be lon
 ## Input and output data
 KEC currently works only with fasta formated files on both input and output. To work with other formats (e.g. fastq) the file has to be converted to fasta first by any available tool. KEC also accepts whole directory as an input, where files with extensions `.fasta` `.fna`, `.ffn`, `.faa` and `.frn` are used. Direct support for other formats will be added in future versions.
 
-In principle, the input sequences can be of any origin (assembled genome, draft contigs, raw sequencing reads etc.). However, the best, fastest and most accurate results will be obtained with assembled genomes. Although unassembed reads can be used, we recommend some sort of assebly before using it with KEC to achieve more accurate results.
+In principle, the input sequences can be of any origin and quality (assembled genome, draft contigs, raw sequencing reads etc.). However, the best, fastest and most accurate results will be obtained with assembled genomes. Although unassembed reads can be used, we recommend some sort of assebly before using it with KEC to achieve more accurate results.
 
 
 ## Memory tests
