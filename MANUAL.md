@@ -39,6 +39,8 @@ In the last stage the surviving target K-mers are put back to the position it wa
 
 <img src="./assets/manual_fig03.svg" width="350" height="auto">
 
+Alternatively, KEC allows the cross-referencing in step two to keep, rather than exclude, the K-mers present in non-target, while excluding all target sequences not present in the non-target. In this case, the resulting merged sequences are those present in both target and non-target sequence pools.
+
 ## Installation
 KEC does not require installation. Binary executables for **Windows**, **Linux** and **macOS** can be downloaded from Releases section. After download and extraction the software works in any directory. During download and first run the software can be marked by antivirus as harmul. However, if downloaded from this repository, the program only works as stated, without any malicious activity or data collection. Users may inspect and compile from source code, if security is a concern.
 
