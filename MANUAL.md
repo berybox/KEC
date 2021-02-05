@@ -27,7 +27,13 @@ In the first stage all input sequences (both target and non-target) are used to 
 
 >K-mer size is a mandatory parameter and its selection is discussed in a  [separate section](#k-mer-size-selection).
 
-The K-mers are stored in two seaprate [hash tables](https://en.wikipedia.org/wiki/Hash_table) (map structure in Go) for target and non-target respectively. The main advantage of hash table is its time complexity for search and insertion which is constant on average and linear in worst case scenario (O(1) to O(n)). This allows KEC to operate very fast even with big datasets (with more data the time needed to complete the search only grows linearly in worst case).
+The K-mers obtained from target and non-target sequences are stored in two designated [hash tables](https://en.wikipedia.org/wiki/Hash_table) (map structure in Go), one for target K-mers and one for non-target K-mers. In case of target hash table the position from which the K-mer was obtained is also marked.
+
+The main advantage of hash table is its low time complexity for search and insertion which is constant on average and linear in worst case scenario (O(1) to O(n)). This allows KEC to operate very fast even with big datasets (with more data the time needed to complete the search only grows linearly in worst case).
+
+In the next stage all K-mers from target hash table are crossreferenced with non-target hash table. When target K-mer is present in non-target hash table, it is excluded. In the end, the target hash table is only contains K-mers which are not present in non-target hash table together with its original position.
+
+<img src="./assets/manual_fig02.png" width="350" height="auto">
 
 
 
