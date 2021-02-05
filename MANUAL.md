@@ -23,7 +23,7 @@ In general, KEC is designed to use **target** and **non-target** genomes to find
 
 In the first stage all input sequences (both target and non-target) are used to create K-mers by sliding windows approach. 
 
-<img src="./assets/manual_fig01.png" width="350" height="auto">
+<img src="./assets/manual_fig01.svg" width="350" height="auto">
 
 >K-mer size is a mandatory parameter and its selection is discussed in a  [separate section](#k-mer-size-selection).
 
@@ -33,7 +33,7 @@ The main advantage of hash table is its low time complexity for search and inser
 
 In the next stage all K-mers from target hash table are crossreferenced with non-target hash table. When target K-mer is present in non-target hash table, it is excluded. In the end, the target hash table is only contains K-mers which are not present in non-target hash table together with its original position.
 
-<img src="./assets/manual_fig02.png" width="350" height="auto">
+<img src="./assets/manual_fig02.svg" width="350" height="auto">
 
 
 
