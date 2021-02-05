@@ -35,7 +35,7 @@ In the next stage all K-mers from target hash table are crossreferenced with non
 
 <img src="./assets/manual_fig02.svg" width="350" height="auto">
 
-In last stage the surviving target K-mers are put back to the position it was originally taken. If the K-mers overlap, they create larger sequences. When all K-mers are back in its original position all gaps are removed, resulting in sequences of various lengths.
+In the last stage the surviving target K-mers are put back to the position it was originally taken. If the K-mers overlap, they create larger sequences. When all K-mers are back in its original position all gaps are removed, resulting in sequences of various lengths.
 
 <img src="./assets/manual_fig03.svg" width="350" height="auto">
 
