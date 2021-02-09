@@ -42,11 +42,11 @@ func exclude(c *cli.Context) error {
 		showMsg("took %s\n", time.Since(actionTime))
 
 		//Show memory stats
-		//*
-		//runtime.GC()
-		runtime.ReadMemStats(&actionMem)
-		showMsg("-- HeapAlloc: %d MB,  Mallocs: %d\n", actionMem.HeapAlloc/1024/1024, actionMem.Mallocs)
-		//
+		/*
+			runtime.GC()
+			runtime.ReadMemStats(&actionMem)
+			showMsg("-- HeapAlloc: %d MB,  Mallocs: %d\n", actionMem.HeapAlloc/1024/1024, actionMem.Mallocs)
+			//*/
 	}
 
 	//Add target
@@ -56,6 +56,12 @@ func exclude(c *cli.Context) error {
 		kec.AddTargetFastaCR(fn)
 		showMsg("took %s\n", time.Since(actionTime))
 	}
+
+	//*
+	runtime.GC()
+	runtime.ReadMemStats(&actionMem)
+	showMsg("-- HeapAlloc: %d MB,  Mallocs: %d\n", actionMem.HeapAlloc/1024/1024, actionMem.Mallocs)
+	//*/
 
 	//Merge
 	actionTime = time.Now()
