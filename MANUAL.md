@@ -7,8 +7,7 @@
 [Command-line parameters](#command-line-parameters)  
 [K-mer size selection](#k-mer-size-selection)  
 [Input and output data](#input-and-output-data)  
-[Memory tests](#memory-tests)  
-[Speed tests](#speed-tests)  
+[Memory and speed tests](#memory-and-speed-tests)
 <!--
 [Citation](#citation)  
 -->
@@ -95,9 +94,47 @@ KEC currently works only with fasta formated files on both input and output. To 
 In principle, the input sequences can be of any origin and quality (assembled genome, draft contigs, raw sequencing reads etc.). However, the best, fastest and most accurate results will be obtained with assembled genomes. Although unassembed reads can be used, we recommend some sort of assebly before using it with KEC to achieve more accurate results.
 
 
-## Memory tests
+## Memory and speed tests
 
-## Speed tests
+Memory consumption and speed of KEC depends on input data and is very defficult to predict. In general, the memory consumption increases with larger datasets and higher K-mer size. But because the K-mers may be present multiple times in the input data, it is not possible to predict actual memory requirements for various datasets. Moreover, Go is garbage collected programming language so memory consumption is can only be affected indirectly and is strongly influenced by compiler and operation system.
+
+To provide some idea of memory consumption and program speed we tested different scenarios and the results are available in the table below. All the tests were performed on common laptop computer with Intel Core i7-8750H CPU and 16 GBs of RAM. 
+
+| Organism | Number of genomes | Sum of genome sizes | K | Time to complete | Memory used |
+|-|:-:|:-:|:-:|:-:|:-:|
+|Bacteria|10|50 Mb|12|8 s|359 MB|
+|Bacteria|10|50 Mb|13|10 s|665 MB|
+|Bacteria|10|50 Mb|14|10 s|673 MB|
+|Bacteria|10|50 Mb|15|10 s|734 MB|
+|Bacteria|10|50 Mb|16|13 s|1277 MB|
+|Bacteria|100|500 Mb|12|56 s|628 MB|
+|Bacteria|100|500 Mb|13|1 m 2 s|1026 MB|
+|Bacteria|100|500 Mb|14|1 m 8 s|1616 MB|
+|Bacteria|100|500 Mb|15|1 m 18 s|2823 MB|
+|Bacteria|100|500 Mb|16|1 m 18 s|2825 MB|
+|Bacteria|1000|4.92 Gb|12|8 m 55 s|3119 MB|
+|Bacteria|1000|4.92 Gb|13|10 m 24 s|4182 MB|
+|Bacteria|1000|4.92 Gb|14|10 m 54 s|5726 MB|
+|Bacteria|1000|4.92 Gb|15|11 m 16 s|8109 MB|
+|Bacteria|1000|4.92 Gb|16|11 m 15 s|8647 MB|
+|Bacteria|2500|12.3 Gb|12|24 m 21 s|3952 MB|
+|Bacteria|2500|12.3 Gb|13|25 m 33 s|5180 MB|
+|Bacteria|2500|12.3 Gb|14|28 m 32 s|9026 MB|
+|Bacteria|2500|12.3 Gb|15|28 m 5 s|9351 MB|
+|Bacteria|2500|12.3 Gb|16|56 m 9 s|14082 MB|
+|Fungi|10|560 Mb|12|1 m 16 s|1136 MB|
+|Fungi|10|560 Mb|13|1 m 47 s|2982 MB|
+|Fungi|10|560 Mb|14|2 m 14 s|5431 MB|
+|Fungi|10|560 Mb|15|2 m 16 s|5997 MB|
+|Fungi|10|560 Mb|16|11 m 41 s|10327 MB|
+|Fungi|100|5 Gb|12|14 m 9 s|6647 MB|
+|Fungi|100|5 Gb|13|16 m 17 s|9209 MB|
+|Fungi|100|5 Gb|14|31 m 2 s|14318 MB|
+|Fungi|100|5 Gb|15|N/A|N/A|
+|Fungi|100|5 Gb|16|N/A|N/A|
+
+
+
 
 <!--
 ## Citation

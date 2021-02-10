@@ -74,7 +74,7 @@ This tutorial provides only one of the many use cases of the KEC software, which
         ```
         Parameters explanation:
 
-        **include** - Keep only K-mers that are present in any of the sequences from the pool
+        **include** - Keep only K-mers that are present in all of the sequences from the pool
 
         **-m master** – Points to the directory containing the master sequence(s). You can also specify the file directly (e.g. by `-m D:\Primer_design\master\GCF_001908775.1_ASM190877v1_genomic.fna`)
 
