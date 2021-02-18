@@ -83,7 +83,7 @@ Will search for common sequences in fasta formatted file `c:\seqs\master\master.
 The selection of K-mer size depends on many factors and it will be different for different datasets. There are, however, general rules for K-mer size selection for each mode of operation.
 
 ### exclude mode
-With higher K-mer size, number and size of the resulting sequences increase. Because a lower K-mer size means that at least 1 ![formula](https://render.githubusercontent.com/render/math?math=\div) [K-mer size] nucleotide is different from nontarget sequences, we usually want to find the lowest K-mer size that produces any results. We usually do that by starting at a number around 12 and increase or decrease the number until the lowest number producing more than 0 sequences is found.
+With higher K-mer size, number and size of the resulting sequences increase. Because a lower K-mer size means that at least 1 ![formula](https://assets.berybox.eu/div.svg) [K-mer size] nucleotide is different from nontarget sequences, we usually want to find the lowest K-mer size that produces any results. We usually do that by starting at a number around 12 and increase or decrease the number until the lowest number producing more than 0 sequences is found.
 
 ### include mode
 Lower K-mer size usually results in fewer sequences which usually tend to be longer, and conversely, higher K-mer size usually results in higher number but shorter sequences. Furthermore, be aware that lower K-mer size means higher chance the sequence is merged with K-mers that are present in the pool sequences, but from various positions. We usually select K-mer size by starting at a number around 15 and raise the number until the resulting sequence count no longer increases by much.
