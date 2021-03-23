@@ -8,9 +8,8 @@
 [K-mer size selection](#k-mer-size-selection)  
 [Input and output data](#input-and-output-data)  
 [Memory and speed tests](#memory-and-speed-tests)
-<!--
 [Citation](#citation)  
--->
+
 
 ## Introduction
 KEC *(short for K-mer exclusion by cross reference)* was designed to search for unique DNA / RNA / amino acid sequences in large datasets. The original aim was to find unique sites to design (PCR / LAMP etc.) primers for specific detection of bacteria. It takes **target** and **non-target** genomes and by cross referencing of the respective K-mers it reconstructs sequences that are unique for **target** genome(s). Good quality input data (e.g. well assembled genomes) should be used for satisfactory results.
@@ -136,11 +135,8 @@ To provide some idea of memory consumption and program speed we tested different
 |Fungi|100|5 Gb|16|N/A|N/A|
 
 
-
-
-<!--
 ## Citation
 If you used KEC for your work, please cite our article:
 
-**Beran P.**, **Stehlíková D.**, **Cohen S.P.**, **Čurn V.** (2021) KEC: Unique sequence search by K-mer exclusion. *Bioinformatics*. **UNDER REVIEW**.
--->
+**Pavel Beran**, **Dagmar Stehlíková**, **Stephen P Cohen**, **Vladislav Čurn**, KEC: Unique sequence search by K-mer exclusion, *Bioinformatics*, 2021;, btab196, [https://doi.org/10.1093/bioinformatics/btab196](https://doi.org/10.1093/bioinformatics/btab196)
+
