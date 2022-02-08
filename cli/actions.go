@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"path/filepath"
-	"runtime"
 	"time"
 
 	"github.com/urfave/cli"
@@ -32,7 +31,7 @@ func exclude(c *cli.Context) error {
 	showMsg("\nStarting KEC - searching unique sequences\n\n")
 	kec := KEC.New(k, min, max, false, reverse)
 	var actionTime time.Time
-	var actionMem runtime.MemStats
+	//var actionMem runtime.MemStats
 
 	//Add nontarget
 	for _, fn := range fileList(nonTarget) {
@@ -40,13 +39,6 @@ func exclude(c *cli.Context) error {
 		showMsg("Reading NONTARGET file: \"%s\" ", filepath.Base(fn))
 		kec.AddNontargetFasta(fn)
 		showMsg("took %s\n", time.Since(actionTime))
-
-		//Show memory stats
-		/*
-			runtime.GC()
-			runtime.ReadMemStats(&actionMem)
-			showMsg("-- HeapAlloc: %d MB,  Mallocs: %d\n", actionMem.HeapAlloc/1024/1024, actionMem.Mallocs)
-			//*/
 	}
 
 	//Add target
@@ -57,11 +49,12 @@ func exclude(c *cli.Context) error {
 		showMsg("took %s\n", time.Since(actionTime))
 	}
 
-	//*
-	runtime.GC()
-	runtime.ReadMemStats(&actionMem)
-	showMsg("-- HeapAlloc: %d MB,  Mallocs: %d\n", actionMem.HeapAlloc/1024/1024, actionMem.Mallocs)
-	//*/
+	//Show memory stats
+	/*
+		runtime.GC()
+		runtime.ReadMemStats(&actionMem)
+		showMsg("-- HeapAlloc: %d MB,  Mallocs: %d\n", actionMem.HeapAlloc/1024/1024, actionMem.Mallocs)
+		//*/
 
 	//Merge
 	actionTime = time.Now()
