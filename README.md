@@ -7,7 +7,7 @@
 [Command-line parameters](#command-line-parameters)  
 [K-mer size selection](#k-mer-size-selection)  
 [Input and output data](#input-and-output-data)  
-[Memory and speed tests](#memory-and-speed-tests)
+[Memory and speed tests](#memory-and-speed-tests)  
 [Citation](#citation)  
 
 
