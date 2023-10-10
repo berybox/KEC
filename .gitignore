@@ -1,3 +1,30 @@
-release/
-!release/_build.bat
+# Binaries for programs and plugins
 *.exe
+*.exe~
+*.zip
+*.dll
+*.so
+*.dylib
+*.fasta
+*.fna
+*.fsa
+debug
+__debug_bin
+
+# Test binary, built with `go test -c`
+*.test
+
+# Go workspace file
+#go.work
+
+# Project specific files
+kec-windows-x86.exe
+kec-windows-x64.exe
+kec-linux-x86
+kec-linux-x64
+kec-darwin-x86
+kec-darwin-x64
+
+.env
+/.vscode/
+/release/

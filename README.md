@@ -8,14 +8,22 @@
 [K-mer size selection](#k-mer-size-selection)  
 [Input and output data](#input-and-output-data)  
 [Memory and speed tests](#memory-and-speed-tests)
-<!--
 [Citation](#citation)  
--->
+
 
 ## Introduction
 KEC *(short for K-mer exclusion by cross reference)* was designed to search for unique DNA / RNA / amino acid sequences in large datasets. The original aim was to find unique sites to design (PCR / LAMP etc.) primers for specific detection of bacteria. It takes **target** and **non-target** genomes and by cross referencing of the respective K-mers it reconstructs sequences that are unique for **target** genome(s). Good quality input data (e.g. well assembled genomes) should be used for satisfactory results.
 
 The purpose of this software is to quickly and easily find unique sequences for further use. Although possible use cases are not limited, no assumptions outside this scope should be made. For example, the software does not provide any means to assemble short sequencing reads to larger sequences or considers any biological context of the sequence.
+
+## Notes on version 1.1
+The KEC version 1.1 has been completely rewritten to make the code readable and understandable so that the it can continue to be extended. Small changes have been made in the way the program works, but every effort has been made to preserve the original functionality and intent of the program. In version 1.1, it is also possible that there will be minor variations in the speed of operation. 
+
+Changes in operation from version 1.0 include:
+- Reverse option in exclude mode should now be significantly faster and consume less memory in most cases.
+- Include mode now works differently from version 1.0 and will produce different results. Whereas in 1.0, k-mers that were contained in at least one sequence in the pool were preserved (as specified, however, this is usually not what is required), now only k-mers that are contained in each sequence in the pool are preserved.
+
+If for any reason version 1.1 does not work for you, please let us know. Version 1.0 is currently still available.
 
 ## Principle of operation
 In general, KEC is designed to use **target** and **non-target** genomes to find unique sequences in **target**. The principle of KEC algorithm can be divided into 3 main stages: **K-mer creation**, **cross referencing of the K-mers** and **merging surviving K-mers into longer sequences**.
@@ -136,11 +144,8 @@ To provide some idea of memory consumption and program speed we tested different
 |Fungi|100|5 Gb|16|N/A|N/A|
 
 
-
-
-<!--
 ## Citation
 If you used KEC for your work, please cite our article:
 
-**Beran P.**, **Stehlíková D.**, **Cohen S.P.**, **Čurn V.** (2021) KEC: Unique sequence search by K-mer exclusion. *Bioinformatics*. **UNDER REVIEW**.
--->
+
+> **Beran P.**, **Stehlíková D.**, **Cohen S.P.**, **Čurn V.** (2021) KEC: unique sequence search by K-mer exclusion. *Bioinformatics*. 37(19):3349-3350. doi: 10.1093/bioinformatics/btab196.

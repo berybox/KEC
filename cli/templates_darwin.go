@@ -5,5 +5,5 @@ var excludeExample = `EXAMPLE:
 `
 
 var includeExample = `EXAMPLE:
-	{{.HelpName}} -m home/seqs/target -n home/seqs/nontarget -o home/seqs/results/test.fasta -k 12
+	{{.HelpName}} -m home/seqs/target -p home/seqs/nontarget -o home/seqs/results/test.fasta -k 12
 `
