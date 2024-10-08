@@ -32,6 +32,13 @@ func (mm *MaskMap) Add(names []maps.NameSize) {
 
 // Unmask Puts KMer in the position to reconstruct original sequence
 func (mm *MaskMap) Unmask(kmer string, namepos maps.NamePos) {
+	l := len(mm.mapp[namepos.Name])
+	if l < namepos.Pos + len(kmer) {
+		l = namepos.Pos + len(kmer)
+		tmp := make([]byte, l, 2*l)
+		copy(tmp, mm.mapp[namepos.Name])
+		mm.mapp[namepos.Name] = tmp
+	}
 	copy(mm.mapp[namepos.Name][namepos.Pos:], []byte(kmer))
 }
 
